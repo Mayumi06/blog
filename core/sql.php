@@ -13,44 +13,59 @@ function insert (string $entidade, array $dados) : string
 
 }
 
-    function update (string $entidade, array $dados, array $criterio = (l) :string
+function update (string $entidade, array $dados, array $criterio = []) :string
 {
     $instrucao = "UPDATE ($entidade)";
-foreach ($dados as $campo => $dado) {
-$set[] = "{$campo}" = {$dado}";
-}
-$instrucao .= ' SET ' .implod(',', $set) ;
+    
+    foreach ($dados as $campo => $dado)
+    {
+        $set[] ="{$campo} = {$dado}";
+    }
 
-if (!empty ($criterio)){
-$instrucao = 'WHERE ';
+    $instrucao .= ' SET ' .implode(',', $set) ;
 
-foreach ($criterio as $expressao) {
-$instrucao .= '' . implode('', $expressao);
-}
+    if (!empty ($criterio))
+    {
+        $instrucao .= 'WHERE ';
+
+        foreach ($criterio as $expressao) 
+        {
+            $instrucao .= '' . implode('', $expressao);
+        }
+    }
+
+    return $instrucao;
 }
 
-return Sinstrucao;
-}
-
-function delete(string $entidade, array $criterio = [1] : string
+function delete(string $entidade, array $criterio = []) : string
 {
-    $intrucao = "DELETE {$entidade}";
+    $instrucao = "DELETE {$entidade}";
+    
     if(!empty($criterio)){
-        $instrucao = '' . implode('',$expressao);
+        $instrucao .= 'WHERE';
+
+        foreach ($criterio as $expressao){
+        $instrucao .= ' ' . implode('',$expressao);
     }
 }
     return $instrucao;
 }
-function seletc (string $entidade, array $campos, array $criterio = [],
-string $orde = null) : string
+
+function select (string $entidade, array $campos, array $criterio = [], string $ordem = null) : string
 {
-    $instrucao = "SELECT" implode (',', $campos);
-    $instrucao = "FROM" implode {$entidade}";
+    $instrucao = "SELECT " . implode (', ', $campos);
+    $instrucao .= " FROM  {$entidade}";
 
     if(!empty($criterio)){
-        $instrucao = 'WHERE';
+        $instrucao .= ' WHERE ';
+
         foreach($criterio as $expressao){
-            $instrucao
+            $instrucao .= '' .implode('',$expressao);
         }
     }
-    ?>
+    if(!empty($ordem)){
+        $instrucao .= " ORDEM BY $ordem";
+    }
+    return $instrucao;
+}
+?>
