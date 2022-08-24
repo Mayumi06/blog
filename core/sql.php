@@ -64,7 +64,7 @@ function select (string $entidade, array $campos, array $criterio = [], string $
         }
     }
     if(!empty($ordem)){
-        $instrucao .= " ORDEM BY $ordem";
+        $instrucao .= " ORDER BY $ordem";
     }
     return $instrucao;
 }

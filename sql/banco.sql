@@ -3,7 +3,7 @@ create database blog;
 use blog;
 
 CREATE TABLE usuario (
-id int NOT NULL AUTO_INCREMENTE,
+id int NOT NULL AUTO_INCREMENT,
 nome varchar(50),
 email varchar (255) NOT NULL,
 senha varchar(60) NOT NULL,
