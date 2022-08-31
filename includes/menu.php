@@ -8,10 +8,10 @@
                 <a class="nav-link" href="index.php">Home</a>
             </li>
             <li class="nav-link">
-                <a class="nav-link" href="index.php">Cadastre-se</a>
+                <a class="nav-link" href="usuario_formulario.php">Cadastre-se</a>
             </li>
             <li class="nav-link">
-                <a class="nav-link" href="index.php">Login</a>
+                <a class="nav-link" href="login_formulario.php">Login</a>
             </li>
             <li class="nav-link">
                 <a class="nav-link" href="index.php">Incluir Post</a>
