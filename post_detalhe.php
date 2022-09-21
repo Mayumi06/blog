@@ -31,8 +31,9 @@
 <html>
     <head>
         <title><?php echo $post['titulo']?></title>
+        
         <link rel="stylesheet"
-              hrel="lib/bootstrap-4.2.1-dist/css/bootstrap.min.css">
+              href="lib/bootstrap-4.2.1-dist/css/bootstrap.min.css">              
     </head>
 <body>
     <div class="container">

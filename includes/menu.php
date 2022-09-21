@@ -14,12 +14,12 @@
                 <a class="nav-link" href="login_formulario.php">Login</a>
             </li>
             <li class="nav-link">
-                <a class="nav-link" href="index.php">Incluir Post</a>
+                <a class="nav-link" href="post_formulario.php">Incluir Post</a>
             </li>
             <?php if ((isset($_SESSION['login']))
-                    && ($_SESSION['login']['usuario']['adm'] === '')) : ?>
+                    && ($_SESSION['login']['usuario']['adm'] == '1')) : ?>
             <li class="nav-link">
-                <a class="nav-link" href="index.php">Usuários</a>
+                <a class="nav-link" href="usuarios.php">Usuários</a>
             </li>
             <?php endif; ?>
         </ul>

@@ -59,7 +59,7 @@ switch($acao) {
             );
 
             if(count($retorno) > 0) {
-                if(crypt($senha,$salt) == $retorno[0]['senbha']) {
+                if(crypt($senha,$salt) == $retorno[0]['senha']) {
                     $_SESSION['login']['usuario'] = $retorno[0];
                     if(!empty($_SESSION['url_retorno'])){
                         header('Location: ' . $_SESSION['url_retorno']);
@@ -118,8 +118,3 @@ switch($acao) {
 }
 header('Location: ../index.php');
 ?>
-        
-
-
-
-

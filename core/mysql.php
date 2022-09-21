@@ -1,8 +1,8 @@
 <?php 
 
-function insere (string $entidade, array $dados) : bool
+function insere(string $entidade, array $dados) : bool
 {
-    $retoro = false;
+    $retorno = false;
 
     foreach ($dados as $campo => $dado) {
         $coringa[$campo] = '?';
@@ -15,9 +15,8 @@ function insere (string $entidade, array $dados) : bool
     $conexao = conecta();
 
     $stmt = mysqli_prepare($conexao, $instrucao);
-
-    print('mysqli_stmt_bind_param($stmt, \'' . implode('',$tipo) . '\',$'. implode(',$', array_keys($dados)) . ');');
-    eval('mysqli_stmt_bind_param($stmt, \'' . implode('',$tipo) . '\',$'. implode(',$', array_keys($dados)) . ');');
+    eval('mysqli_stmt_bind_param($stmt, \'' . implode('',$tipo) . '\',$'.
+    implode(',$', array_keys($dados)) . ');');
     
      mysqli_stmt_execute($stmt);
 
@@ -162,7 +161,7 @@ string $ordem = null) : array
     }
 
     $instrucao = select($entidade, $campos, $coringa_criterio, $ordem);
-
+    
     $conexao = conecta();
 
     $stmt = mysqli_prepare($conexao, $instrucao);

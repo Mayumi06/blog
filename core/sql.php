@@ -60,7 +60,7 @@ function select (string $entidade, array $campos, array $criterio = [], string $
         $instrucao .= ' WHERE ';
 
         foreach($criterio as $expressao){
-            $instrucao .= '' .implode('',$expressao);
+            $instrucao .= ' ' .implode(' ',$expressao);
         }
     }
     if(!empty($ordem)){
