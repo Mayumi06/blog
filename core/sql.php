@@ -15,7 +15,7 @@ function insert (string $entidade, array $dados) : string
 
 function update (string $entidade, array $dados, array $criterio = []) :string
 {
-    $instrucao = "UPDATE ($entidade)";
+    $instrucao = "UPDATE {$entidade}";
     
     foreach ($dados as $campo => $dado)
     {
@@ -26,7 +26,7 @@ function update (string $entidade, array $dados, array $criterio = []) :string
 
     if (!empty ($criterio))
     {
-        $instrucao .= 'WHERE ';
+        $instrucao .= ' WHERE ';
 
         foreach ($criterio as $expressao) 
         {

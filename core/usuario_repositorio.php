@@ -91,7 +91,7 @@ switch($acao) {
                 $criterio
             );
 
-            header('Location: /usuario..php');
+            header('Location: ../usuarios.php');
             exit;
             break;
         case 'adm':
@@ -112,7 +112,7 @@ switch($acao) {
                 $criterio
             );
 
-            header('Loccation: ../usuarios.php');
+            header('Location: ../usuarios.php');
             exit;
             break;
 }

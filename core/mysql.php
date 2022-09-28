@@ -60,13 +60,13 @@ function atualiza(string $entidade, array $dados, array $criterio = []) : bool
     } 
 
     $instrucao = update($entidade, $coringa_dados, $coringa_criterio); 
-
+    
     $conexao = conecta();
 
     $stmt = mysqli_prepare($conexao, $instrucao);
 
     if(isset($tipo)){
-        $comando = 'mysqli_stt_binf_param($stmt,';
+        $comando = 'mysqli_stmt_bind_param($stmt,';
         $comando .= "'" . implode('',$tipo). "'";
         $comando .= ', $' . implode(', $', array_keys($dados));
         $comando .= ', $' . implode(', $', $campos_criterio);
